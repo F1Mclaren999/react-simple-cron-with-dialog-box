@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import DialogBox from './Dialog';
+import AlertConfig from './AlertConfig';
 import './style.css';
 
 class App extends Component {
@@ -13,11 +14,19 @@ class App extends Component {
     };
   }
 
+  setOpenOrClose = () => {
+    const { dialogOpen } = this.state;
+    this.setState({
+      dialogOpen: !dialogOpen,
+    });
+  };
+
   render() {
     const { dialogOpen } = this.state;
     return (
       <div id="main">
         <h3>Hello, {this.state.name}</h3>
+        <button onClick={this.setOpenOrClose}>Open Dialog</button>
         <DialogBox
           confirmLabel="Submit"
           dialogOpen={dialogOpen}
@@ -27,7 +36,8 @@ class App extends Component {
           handleCancel={this.closeDialog}
           handleConfirm={this.confirm}
         >
-          <div>Hello</div>
+          {/* <AlertConfig /> */}
+          <div>PingPong</div>
         </DialogBox>
       </div>
     );

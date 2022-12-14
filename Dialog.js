@@ -26,43 +26,43 @@ const styles = (theme) => ({
   },
   closeButton: {
     position: 'absolute',
-    right: theme.spacing(1),
-    top: theme.spacing(2),
-    right: theme.palette.grey[500],
+    // right: theme.spacing(1),
+    // top: theme.spacing(2),
+    // right: theme.palette.grey[500],
   },
 });
 
-const DialogTitle = withStyles(styles)((props) => {
-  const { children, classes, onClose, ...other } = props;
-  <MuiDialogTitle disableTypography className={classes.root} {...other}>
-    <Typography variant="h4">{children}</Typography>
-    {onClose ? (
-      <IconButton className={classes.closeButton} onClick={onClose}>
-        <CloseIcon />
-      </IconButton>
-    ) : null}
-  </MuiDialogTitle>;
-});
+// const DialogTitle = withStyles(styles)((props) => {
+//   const { children, classes, onClose, ...other } = props;
+//   <MuiDialogTitle disableTypography className={classes.root} {...other}>
+//     <Typography variant="h4">{children}</Typography>
+//     {onClose ? (
+//       <IconButton className={classes.closeButton} onClick={onClose}>
+//         <CloseIcon />
+//       </IconButton>
+//     ) : null}
+//   </MuiDialogTitle>;
+// });
 
-const DialogContent = withStyles(() => ({
-  root: {
-    margin: 0,
-    padding: '15px',
-    textAlign: 'right',
-    borderTop: '1px solid #e5e5e5',
-    color: '#555',
-  },
-}))(MuiDialogContent);
+// const DialogContent = withStyles((theme) => ({
+//   root: {
+//     margin: 0,
+//     padding: '15px',
+//     textAlign: 'right',
+//     borderTop: '1px solid #e5e5e5',
+//     color: '#555',
+//   },
+// }))(MuiDialogContent);
 
-const DialogActions = withStyles(() => ({
-  root: {
-    margin: 0,
-    padding: '15px',
-    textAlign: 'right',
-    borderTop: '1px solid #e5e5e5',
-    color: '#555',
-  },
-}))(MuiDialogActions);
+// const DialogActions = withStyles((theme) => ({
+//   root: {
+//     margin: 0,
+//     padding: '15px',
+//     textAlign: 'right',
+//     borderTop: '1px solid #e5e5e5',
+//     color: '#555',
+//   },
+// }))(MuiDialogActions);
 
 const DialogBox = (props) => {
   const {
@@ -90,9 +90,9 @@ const DialogBox = (props) => {
       // classes={classes}
       {...rest}
     >
-      <DialogTitle onClose={handleCancel}>{dialogTitle}</DialogTitle>
-      <DialogContent dividers>{children}</DialogContent>
-      <DialogActions>
+      {/* <DialogTitle onClose={handleCancel}>{dialogTitle}</DialogTitle> */}
+      {/* <DialogContent dividers={true}>{children}</DialogContent> */}
+      {/* <DialogActions>
         <Button
           variant="contained"
           style={{
@@ -112,7 +112,8 @@ const DialogBox = (props) => {
         >
           {confirmLabel}
         </Button>
-      </DialogActions>
+      </DialogActions> */}
+      {children}
     </Dialog>
   );
 };
